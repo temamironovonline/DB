@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    android:layout_width="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/instr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Инструмент"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        app:layout_constraintEnd_toStartOf="@+id/type_of_tool"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/type_of_tool"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/instr"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/price"
+        android:textAlignment="center"
+        android:hint="Вид инструмента"/>
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Цена"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button_table"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_of_tool" />
+
+    <TableLayout
+        android:id="@+id/button_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/db"
+        app:layout_constraintTop_toBottomOf="@+id/price">
+
+        <TableRow
+            android:layout_width="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@drawable/button_background"
+                android:text="Добавить" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:background="@drawable/button_background"
+                android:text="Удалить" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/db"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/button_table">
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
